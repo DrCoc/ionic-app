@@ -1,14 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      ionic-app
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <form [formGroup]="theForm">
+    <ion-item>
+      <ion-label color="primary" stacked>Nom</ion-label>
+      <ion-input formControlName="nom" type="text" placeholder="Doe"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Prénom</ion-label>
+        <ion-input formControlName="prenom" type="text" placeholder="John"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="age" type="number" placeholder="Age"></ion-input>
+    </ion-item>
+
+    <button (tap)="goToDetailsPage()" [disabled]="!isFormValid()" class="block-marge-center mt-10" ion-button round>Round Button</button>
+  </form>
 </ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ionic-app
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="areDatasDisplayable()">
+    <h4>Salut {{ nom }} {{prenom}}</h4>
+    <h5>Tu as {{ age }} ans</h5>
+
+    <p>{{ (age < 18) ? 'Tu es mineure' : 'Tu es majeure' }}</p>
+  </div>
+
+  <div *ngIf="!(areDatasDisplayable())">
+      <h3>Les données ne sont pas renseignées</h3>
+  </div>
+</ion-content>
